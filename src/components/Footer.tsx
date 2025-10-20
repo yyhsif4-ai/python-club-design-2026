@@ -1,6 +1,7 @@
 import { Code2, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-12">
@@ -31,32 +32,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Быстрые ссылки</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#courses" className="text-foreground/60 hover:text-primary transition-colors">
-                  Все курсы
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-foreground/60 hover:text-primary transition-colors">
-                  О платформе
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="text-foreground/60 hover:text-primary transition-colors">
-                  Тарифы
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-foreground/60 hover:text-primary transition-colors">
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </div>
+        {/* Quick Links */}
+        <div>
+          <h4 className="font-semibold mb-4">Быстрые ссылки</h4>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/courses" className="text-foreground/60 hover:text-primary transition-colors">
+                Все курсы
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="text-foreground/60 hover:text-primary transition-colors">
+                О платформе
+              </Link>
+            </li>
+            <li>
+              <Link to="/recommendations" className="text-foreground/60 hover:text-primary transition-colors">
+                Рекомендации
+              </Link>
+            </li>
+            <li>
+              <Link to="/dashboard" className="text-foreground/60 hover:text-primary transition-colors">
+                Личный кабинет
+              </Link>
+            </li>
+          </ul>
+        </div>
 
           {/* Support */}
           <div>
@@ -99,5 +100,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

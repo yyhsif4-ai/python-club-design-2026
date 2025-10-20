@@ -1,7 +1,8 @@
 import { Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
       <div className="container mx-auto px-6">
@@ -12,27 +13,27 @@ const Header = () => {
             <span className="text-xl font-bold">Python Club</span>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#courses" className="text-foreground/80 hover:text-primary transition-colors">
-              Курсы
-            </a>
-            <a href="#about" className="text-foreground/80 hover:text-primary transition-colors">
-              О нас
-            </a>
-            <a href="#recommendations" className="text-foreground/80 hover:text-primary transition-colors">
-              Рекомендации
-            </a>
-          </nav>
+      {/* Navigation */}
+      <nav className="hidden md:flex items-center gap-8">
+        <Link to="/courses" className="text-foreground/80 hover:text-primary transition-colors">
+          Курсы
+        </Link>
+        <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">
+          О нас
+        </Link>
+        <Link to="/recommendations" className="text-foreground/80 hover:text-primary transition-colors">
+          Рекомендации
+        </Link>
+      </nav>
 
-          {/* Login Button */}
-          <Button variant="outline" size="sm">
-            Войти
-          </Button>
-        </div>
-      </div>
-    </header>
-  );
+      {/* Login Button */}
+      <Link to="/dashboard">
+        <Button variant="outline" size="sm">
+          Войти
+        </Button>
+      </Link>
+    </div>
+  </div>
+</header>
+);
 };
-
-export default Header;
